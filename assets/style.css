@@ -1,0 +1,181 @@
+/* Imports */
+@font-face {
+    font-family: 'Hanken Grotesk Medium';
+    src: url(./fonts/static/HankenGrotesk-Medium.ttf);
+}
+@font-face {
+    font-family: 'Hanken Grotesk Bold';
+    src: url(./fonts/static/HankenGrotesk-Bold.ttf);
+}
+@font-face {
+    font-family: 'Hanken Grotesk Extra Bold';
+    src: url(./fonts/static/HankenGrotesk-ExtraBold.ttf);
+}
+
+/* Global Variables */
+:root {
+    /* Component Summary */
+    --light-red: hsl(0, 100%, 67%); /* Reaction */
+    --orangey-yellow: hsl(39, 100%, 56%); /* Memory */
+    --green-teal: hsl(166, 100%, 37%); /* Verbal */
+    --cobalt-blue: hsl(234, 85%, 45%); /* Visual */
+
+    /* Score Section Gradient Background */
+    --light-slate-blue: hsl(252, 100%, 67%);
+    --light-royal-blue: hsl(241, 81%, 54%);
+
+    /* Score Circle Gradient Background */
+    --violet-blue: hsla(256, 72%, 46%, 1);
+    --persian-blue: hsla(241, 72%, 46%, 0);
+
+    /* Neutral */
+    --pale-blue: hsl(221, 100%, 96%);
+    --light-lavender: hsl(241, 100%, 89%);
+    --dark-grey-blue: hsl(224, 30%, 27%);
+}
+
+/* Defaults */
+*, *::before, *::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Hanken Grotesk Medium';
+}
+body {
+    min-height: 100vh;
+}
+/* Results Summary Component */
+.results-summary-component {
+    display: flex;
+    overflow: hidden;
+}
+.score-container,
+.summary-container {
+    padding: 32px;
+}
+.score-container > *:not(:last-child),
+.summary-container > *:not(:last-child) {
+    margin-bottom: 24px;
+}
+
+/* Component Score */
+.score-container {
+    background-image: linear-gradient(to bottom, var(--light-slate-blue), var(--light-royal-blue));
+    text-align: center;
+    color: var(--light-lavender);
+}
+.score {
+    display: inline-block;
+    width: 175px;
+    height: 175px;
+    border-radius: 50%;
+    background-image: linear-gradient(to bottom, var(--violet-blue), var(--persian-blue));
+}
+.score .container {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.score .container .user-score {
+    font-size: 4em;
+    color: white;
+}
+.score .container .max-score {
+    opacity: 0.5;
+}
+.score-rank {
+    color: white;
+}
+
+/* Component Summary */
+.stats-container > div {
+    padding: 16px;
+    border-radius: 8px;
+}
+.stats-container > div:not(:last-child) {
+    margin-bottom: 16px;
+}
+.stats-container > div > * {
+    display: inline-block;
+    vertical-align: middle;
+}
+.stats-container .stat-score {
+    float: right;
+}
+.reaction-stat {
+    background-color: hsla(0, 100%, 67%, 0.1);
+}
+.reaction-stat .stat-text {
+    color: var(--light-red);
+}
+.memory-stat {
+    background-color: hsla(39, 100%, 56%, 0.1);
+}
+.memory-stat .stat-text {
+    color: var(--orangey-yellow);
+}
+.verbal-stat {
+    background-color: hsla(166, 100%, 37%, 0.1);
+}
+.verbal-stat .stat-text {
+    color: var(--green-teal);
+}
+.visual-stat {
+    background-color: hsla(234, 85%, 45%, 0.1);
+}
+.visual-stat .stat-text {
+    color: var(--cobalt-blue);
+}
+.stats-container .stat-score {
+    color: rgba(0, 0, 0, 0.5)
+}
+.stats-container .stat-score .user-score {
+    font-family: 'Hanken Grotesk Bold';
+    color: black;
+}
+.summary-container .continue-btn {
+    display: block;
+    padding-block: 16px;
+    border-radius: 32px;
+    background-image: linear-gradient(to bottom, var(--dark-grey-blue), var(--dark-grey-blue));
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+.summary-container .continue-btn:hover,
+.summary-container .continue-btn:focus {
+    background-image: linear-gradient(to bottom, var(--light-slate-blue), var(--light-royal-blue));
+}
+/* Media Queries */
+@media screen and (min-width: 651px) { /* Desktop */
+    body {
+        display: grid;
+        place-items: center;
+    }
+    .results-summary-component {
+        width: 600px;
+        box-shadow: 20px 20px 50px 0 rgba(0, 0, 0, 0.1);
+        border-radius: 32px;
+    }
+    .score-container,
+    .summary-container {
+        flex-basis: 50%;
+    }
+    .score-container {
+        border-top-right-radius: 32px;
+        border-bottom-right-radius: 32px;
+    }
+}
+@media screen and (max-width: 650px) { /* Mobile */
+    .results-summary-component {
+        width: 100vw;
+        flex-direction: column;
+    }
+    .score-container {
+        border-bottom-left-radius: 32px;
+        border-bottom-right-radius: 32px;
+    }
+    .score-text {
+        padding-inline: 10%;
+    }
+}

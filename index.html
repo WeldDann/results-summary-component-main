@@ -4,44 +4,77 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
+  <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   
+  <!-- Title -->
   <title>Frontend Mentor | Results summary component</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="./assets/style.css" type="text/css">
 <body>
+  <!-- Results Summary Component -->
+  <div class="results-summary-component">
+    <!-- Score Section -->
+    <div class="score-container">
+      <h2 class="score-header">Your Result</h2>
+      <div class="score">
+        <div class="container">
+          <h1 class="user-score">76</h1>
+          <p class="max-score">of 100</p>
+        </div>
+      </div>
+      <h1 class="score-rank">Great</h1>
+      <p class="score-text">
+        You scored higher than 65% of the people who have taken these tests.
+      </p>
+    </div>
+    
+    <!-- Summary Section -->
+    <div class="summary-container">
+      <h2 class="summary-header">Summary</h2>
 
-  Your Result
-  76
-  of 100
+      <!-- Stats -->
+      <div class="stats-container">
+        <div class="reaction-stat">
+          <img src="./assets/images/icon-reaction.svg" alt="bolt icon">
+          <p class="stat-text">Reaction</p>
+          <p class="stat-score">
+            <span class="user-score">80</span>
+            / 100
+          </p>
+        </div>
 
-  Great
-  You scored higher than 65% of the people who have taken these tests.
-  
-  Summary
+        <div class="memory-stat">
+          <img src="./assets/images/icon-memory.svg" alt="brain icon">
+          <p class="stat-text">Memory</p>
+          <p class="stat-score">
+            <span class="user-score">92</span>
+            / 100
+          </p>
+        </div>
 
-  Reaction
-  80 / 100
+        <div class="verbal-stat">
+          <img src="./assets/images/icon-verbal.svg" alt="speech bubble icon">
+          <p class="stat-text">Verbal</p>
+          <p class="stat-score">
+            <span class="user-score">61</span>
+            / 100
+          </p>
+        </div>
 
-  Memory
-  92 / 100
+        <div class="visual-stat">
+          <img src="./assets/images/icon-visual.svg" alt="eye icon">
+          <p class="stat-text">Visual</p>
+          <p class="stat-score">
+            <span class="user-score">72</span>
+            / 100
+          </p>
+        </div>
+      </div>
 
-  Verbal
-  61 / 100
-
-  Visual
-  72 / 100
-
-  Continue
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+      <a class="continue-btn" href="#">Continue</a>
+    </div>
   </div>
 </body>
 </html>
