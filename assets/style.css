@@ -102,6 +102,9 @@ body {
     display: inline-block;
     vertical-align: middle;
 }
+.stats-container .stat-text {
+    margin-left: 4px;
+}
 .stats-container .stat-score {
     float: right;
 }
